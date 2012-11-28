@@ -8,10 +8,6 @@ app.use( express.static('static') );
 
 server.listen(80);
 
-app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
 io.sockets.on('connection', function (socket) {
   // socket.emit('news', { hello: 'world' });
   socket.on('chat', function (data) {
